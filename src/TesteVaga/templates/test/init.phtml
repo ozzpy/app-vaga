@@ -1,0 +1,59 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: webmaster
+ * Date: 05/12/18
+ * Time: 12:52 PM
+ */
+?>
+
+<div class="container">
+
+    <div align="right">
+        <a href="/testevaga/cargo">Lista Cargo</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/testevaga?list=month">Lista por Mês</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/testevaga/add">Adicionar</a>
+    </div>
+    <br/>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>IDADE</th>
+                <th>CARGO</th>
+                <th>DATA CONTRATAÇÃO</th>
+                <th>EMPRESA</th>
+                <th>AÇÃO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="/testevaga?order=id">ID</a></td>
+                <td><a href="/testevaga?order=name">NOME</a></td>
+                <td><a href="/testevaga?order=age">IDADE</a></td>
+                <td><a href="/testevaga?order=role">CARGO</a></td>
+                <td><a href="/testevaga?order=hiring_date">DATA CONTRATAÇÃO</a></td>
+                <td><a href="/testevaga?order=company">EMPRESA</a></td>
+                <td>&nbsp;</td>
+            </tr>
+            <?php foreach ($this->listEmployees as $employee):?>
+                <tr style="border-bottom: 1px solid #888888">
+                    <td width="50"><?php echo $employee->id;?></td>
+                    <td><?php echo $employee->name;?></td>
+                    <td><?php echo $employee->age;?></td>
+                    <td><?php echo $employee->role;?></td>
+                    <td><?php echo date("d/m/Y",strtotime($employee->hiring_date));?></td>
+                    <td><?php echo $employee->company;?></td>
+                    <td>
+                        <a href="/testevaga/edit/<?php echo $employee->id;?>" class="btn">Editar</a>
+                        <a href="javascript:;" class="removeItem" data-id="<?php echo $employee->id;?>">Deletar</a>
+                    </td>
+                </tr>
+
+            <?php endforeach;?>
+        </tbody>
+    </table>
+</div>

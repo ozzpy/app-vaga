@@ -1,0 +1,72 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: webmaster
+ * Date: 05/12/18
+ * Time: 01:06 PM
+ */
+?>
+<div class="container">
+
+    <?php if ( $this->registered ):?>
+        <div align="center" style="color: green; font-size: 24px;">
+            <div>Atualizado</div>
+            <a class="btn" href="/testevaga">Voltar</a>
+        </div>
+    <?php endif;?>
+
+    <div>
+        <form action="" method="post">
+            <input type="hidden" name="id" value="<?php echo $this->row->id;?>" />
+            <div>
+                <label for="name">Nome</label>
+                <div><input name="name" id="name" value="<?php echo $this->row->name;?>"></div>
+            </div>
+            <br/>
+            <div>
+                <label for="age">Idade</label>
+                <div><input name="age" id="age" value="<?php echo $this->row->age;?>"></div>
+            </div>
+            <br/>
+            <div>
+                <label for="role">Cargo</label>
+                <div>
+
+                    <div>
+                        <select name="role" id="role">
+                            <optgroup label="atual">
+                                <option value="<?php echo $this->row->role;?>"><?php echo $this->row->role;?></option>
+                            </optgroup>
+                            <optgroup label="trocar para">
+                                <option value="recepcionista">recepcionista</option>
+                                <option value="técnico">técnico</option>
+                                <option value="gerente">gerente</option>
+                                <option value="gestor">gestor</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div>
+                <label for="hiring_date">Data de contratação</label>
+                <div><input name="hiring_date" id="hiring_date" value="<?php echo date("d/m/Y",strtotime($this->row->hiring_date)) ;?>"></div>
+            </div>
+            <br/>
+            <div>
+                <label for="company">Empresa</label>
+                <div><input name="company" id="company" value="<?php echo $this->row->company;?>"></div>
+            </div>
+            <br/>
+            <div><button type="submit">Atualizar</button> </div>
+        </form>
+    </div>
+
+
+
+    <div align="center">
+        <a class="btn" href="/testevaga">Voltar</a>
+    </div>
+
+</div>
+

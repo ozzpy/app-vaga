@@ -1,0 +1,62 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: webmaster
+ * Date: 05/12/18
+ * Time: 01:06 PM
+ */
+?>
+<div class="container">
+
+    <?php if ( $this->registered ):?>
+    <div align="center" style="color: green; font-size: 24px;">
+            <div>Registrado</div>
+            <a class="btn" href="/testevaga">Voltar</a>
+    </div>
+    <?php endif;?>
+
+    <div>
+        <form action="" method="post">
+            <div>
+                <label for="name">Nome</label>
+                <div><input name="name" id="name" value=""></div>
+            </div>
+            <br/>
+            <div>
+                <label for="age">Idade</label>
+                <div><input name="age" id="age" value=""></div>
+            </div>
+            <br/>
+            <div>
+                <label for="role">Cargo</label>
+                <div>
+                    <select name="role" id="role">
+                        <option value="recepcionista">recepcionista</option>
+                        <option value="técnico">técnico</option>
+                        <option value="gerente">gerente</option>
+                        <option value="gestor">gestor</option>
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <div>
+                <label for="hiring_date">Data de contratação</label>
+                <div><input name="hiring_date" id="hiring_date" value=""></div>
+            </div>
+            <br/>
+            <div>
+                <label for="company">Empresa</label>
+                <div><input name="company" id="company" value=""></div>
+            </div>
+            <br/>
+            <div><button type="submit">Registrar</button> </div>
+        </form>
+    </div>
+
+
+
+    <div align="center">
+        <a class="btn" href="/testevaga">Voltar</a>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: webmaster
+ * Date: 05/12/18
+ * Time: 02:17 PM
+ */
+?>
+<div class="container">
+
+    <div align="right">
+        <a href="/testevaga/add">Adicionar</a>
+    </div>
+    <br/>
+    <table style="width: 100%;">
+        <thead>
+        <tr>
+            <th>CARGO</th>
+            <th>Quantidade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($this->roles as $role => $qtd):?>
+            <tr style="border-bottom: 1px solid #888888">
+                <td><?php echo $role;?></td>
+                <td><?php echo $qtd;?></td>
+            </tr>
+
+        <?php endforeach;?>
+        </tbody>
+    </table>
+    <br/><br/>
+    <div align="center">
+        <a class="btn" href="/testevaga">Voltar</a>
+    </div>
+</div>
+
+
+
+
